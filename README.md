@@ -11,7 +11,11 @@ also note that in my original PoC, I wanted to use NtMapViewofSection instead of
 - https://github.com/Cracked5pider/earlycascade-injection (I directly took his cascade_stub and extract.py)
 
 testing usage:<BR>  
-                - build the paystub binary and extract its shellcode with extract.py.<BR>
+                - build the paystub binary and extract its shellcode with extract.py.<BR> 
+                    - early_cascade_inj_rs>\paystub> cargo build --release
+                    - early_cascade_inj_rs\paystub> python .\extract.py -f ./target/release/paystub.exe -o loader.bin
                 - build the ecinject_rs binary<BR>
+                    - early_cascade_inj_rs>\ecinject_rs> cargo build --bin ecinject_rs --release
                 - pass the *.bin file from extract.py to the ecinject_rs binary as an arg<BR>
+                    - \early_cascade_inj_rs> .\ecinject_rs\target\release\ecinject_rs.exe .\paystub\loader.bin
                 - the TEST_CODE shellcode will pop calc. swap it out with your own shellcode if you want.
