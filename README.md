@@ -12,10 +12,10 @@ also note that in my original PoC, I wanted to use NtMapViewofSection instead of
 
 testing usage:<BR>  
                 - build the paystub binary and extract its shellcode with extract.py.<BR> 
-                    - early_cascade_inj_rs>\paystub> cargo build --release
-                    - early_cascade_inj_rs\paystub> python .\extract.py -f ./target/release/paystub.exe -o loader.bin
+                      ```early_cascade_inj_rs>\paystub> cargo build --release```<BR>
+                    ```early_cascade_inj_rs\paystub> python .\extract.py -f ./target/release/paystub.exe -o loader.bin```<BR>
                 - build the ecinject_rs binary<BR>
-                    - early_cascade_inj_rs>\ecinject_rs> cargo build --bin ecinject_rs --release
+                    ```early_cascade_inj_rs>\ecinject_rs> cargo build --bin ecinject_rs --release```<BR>
                 - pass the *.bin file from extract.py to the ecinject_rs binary as an arg<BR>
-                    - \early_cascade_inj_rs> .\ecinject_rs\target\release\ecinject_rs.exe .\paystub\loader.bin
+                    ```\early_cascade_inj_rs> .\ecinject_rs\target\release\ecinject_rs.exe .\paystub\loader.bin```<BR>
                 - the TEST_CODE shellcode will pop calc. swap it out with your own shellcode if you want.
