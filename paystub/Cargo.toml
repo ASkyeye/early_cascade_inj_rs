@@ -1,0 +1,8 @@
+[package]
+name = "paystub"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+winapi = { version = "0.3.9", features = ["memoryapi", "libloaderapi", "processthreadsapi"]}
+ntapi = "0.4.1"
